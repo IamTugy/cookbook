@@ -7,7 +7,7 @@ packages = [{ include = "cookbook" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-sqlalchemy = "^1.4.45"
+sqlalchemy = "^2.0.22"
 pydantic = "^1.10.2"
 sqlalchemy_utils = "^0.39.0"
 environs = "^9.5.0"
@@ -16,6 +16,7 @@ python-jose = "^3.3.0"
 auth0-python = "^3.24.0"
 jinja2 = "^3.1.2"
 fastapi = "^0.104.0"
+psycopg2-binary = "^2.9.9"
 
 [tool.poetry.dev-dependencies]
 

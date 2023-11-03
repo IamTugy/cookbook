@@ -2,8 +2,7 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Enum
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy_utils import URLType
 
-from db.database import Base
-
+from cookbook.adapters.sql.base import Base
 from cookbook.domain.user.models import User as DomainUser
 
 

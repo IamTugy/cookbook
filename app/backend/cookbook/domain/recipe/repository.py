@@ -7,7 +7,7 @@ class AbstractRecipeRepository(ABC):
     # db interface
 
     @abstractmethod
-    def get_recipe(self, recipe_id) -> Recipe:
+    def get_recipe(self, recipe_id: int) -> Recipe:
         pass
 
     @abstractmethod

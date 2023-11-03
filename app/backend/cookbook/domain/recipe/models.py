@@ -7,17 +7,21 @@ from cookbook.ports.schemas.user import User
 
 
 class BaseInformation(BaseModel):
+    id: int
     title: str
     description: str | None = None
     pictures_url: List[str] | None = None
 
 
 class SimpleStep(BaseInformation):
-    pass
+    ingredients: list["Ingredient"]
+    recipe_id: int
 
 
 class TimeStep(BaseInformation):
+    ingredients: list["Ingredient"]
     timer: int | None = None  # seconds
+    recipe_id: int
 
 
 class ScaleOption(Enum):
@@ -66,18 +70,16 @@ class RecipeAdditionalInformation(BaseModel):
     servings: int
 
 
+Instruction = SimpleStep | TimeStep
+
+
 class Recipe(BaseInformation):
-    id: int
     owner: Owner  # not defined yet
-    tags: List[str] | None = None
-
     additional_info: RecipeAdditionalInformation
-
-    nutrition: List[NutritionValue] | None
-    equipment: List[str] | None
-    ingredients: List[Ingredient]
-
-    sections: List[Union[SimpleStep, TimeStep]]
+    instructions: list[Instruction]
+    tags: List[str] | None = None
+    nutrition: List[NutritionValue] | None = None
+    equipment: List[str] | None = None
 
     class Config:
         orm_mode = True
@@ -94,4 +96,3 @@ class NewRecipe(BaseInformation):
     ingredients: List[Ingredient]
 
     sections: List[Union[SimpleStep, TimeStep]]
-
