@@ -1,0 +1,50 @@
+meta:
+  schema-version: 0.1.0
+  created-on: "2024-02-04T11:34:38Z"
+  cli-version: 0.2.0
+projects:
+  iamtugy-cookbook:
+    targets:
+      - package.json
+    manager:
+      ecosystem: node
+      name: yarn
+      version: "1"
+    overrides:
+      semver:
+        5.7.1:
+          use: 5.7.1-sp1
+        6.3.0:
+          use: 6.3.0-sp1
+        7.3.8:
+          use: 7.3.8-sp1
+      got:
+        9.6.0:
+          use: 9.6.0-sp1
+      word-wrap:
+        1.2.3:
+          use: 1.2.3-sp1
+      http-cache-semantics:
+        4.1.0:
+          use: 4.1.0-sp1
+      tough-cookie:
+        4.1.2:
+          use: 4.1.2-sp1
+      webpack:
+        5.75.0:
+          use: 5.75.0-sp1
+      glob-parent:
+        3.1.0:
+          use: 3.1.0-sp1
+      trim:
+        0.0.1:
+          use: 0.0.1-sp1
+      postcss:
+        7.0.39:
+          use: 7.0.39-sp1
+      follow-redirects:
+        1.15.2:
+          use: 1.15.2-sp1
+      nth-check:
+        1.0.2:
+          use: 1.0.2-sp1
